@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="eportafolio_diazModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Acerca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Acerca" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Asunto" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Curriculum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Area" Type="varchar" MaxLength="50" />
+          <Property Name="linkedin" Type="varchar" MaxLength="50" />
+          <Property Name="website" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Skills" Type="varchar" MaxLength="50" />
+          <Property Name="Tools" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Proyectos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="500" />
+          <Property Name="Descripcion" Type="varchar(max)" />
+          <Property Name="Imagen" Type="varchar" MaxLength="50" />
+          <Property Name="Empresa" Type="varchar" MaxLength="50" />
+          <Property Name="Fecha" Type="date" />
+        </EntityType>
+        <EntityContainer Name="eportafolio_diazModelStoreContainer">
+          <EntitySet Name="Acerca" EntityType="Self.Acerca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contacto" EntityType="Self.Contacto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Curriculum" EntityType="Self.Curriculum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proyectos" EntityType="Self.Proyectos" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="eportafolio_diazModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Acerca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Acerca1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Asunto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Curriculum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="linkedin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Skills" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tools" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Proyecto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Imagen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Empresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="eportafolio_diazEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Acercas" EntityType="Self.Acerca" />
+          <EntitySet Name="Contactoes" EntityType="Self.Contacto" />
+          <EntitySet Name="Curricula" EntityType="Self.Curriculum" />
+          <EntitySet Name="Proyectos" EntityType="Self.Proyecto" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="eportafolio_diazModelStoreContainer" CdmEntityContainer="eportafolio_diazEntities">
+          <EntitySetMapping Name="Acercas">
+            <EntityTypeMapping TypeName="eportafolio_diazModel.Acerca">
+              <MappingFragment StoreEntitySet="Acerca">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Acerca1" ColumnName="Acerca" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contactoes">
+            <EntityTypeMapping TypeName="eportafolio_diazModel.Contacto">
+              <MappingFragment StoreEntitySet="Contacto">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Asunto" ColumnName="Asunto" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Curricula">
+            <EntityTypeMapping TypeName="eportafolio_diazModel.Curriculum">
+              <MappingFragment StoreEntitySet="Curriculum">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="linkedin" ColumnName="linkedin" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Skills" ColumnName="Skills" />
+                <ScalarProperty Name="Tools" ColumnName="Tools" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proyectos">
+            <EntityTypeMapping TypeName="eportafolio_diazModel.Proyecto">
+              <MappingFragment StoreEntitySet="Proyectos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
